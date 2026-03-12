@@ -1,191 +1,349 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Portfolio - Aaron</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Style du menu responsive */
-    .menu-toggle {
-      display: none;
-      background-color: white;
-      color: yellow;
-      padding: 10px 15px;
-      border: none;
-      cursor: pointer;
-      font-size: 18px;
-      margin: 10px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Portfolio - Aaron</title>
 
-    .main-nav {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      background-color: blue;
-      padding: 10px;
-    }
+<style>
 
-    .main-nav a {
-      color: yellowgreen;
-      text-decoration: none;
-      font-weight: bold;
-    }
+/* Style général */
+body{
+font-family: Arial, sans-serif;
+margin:0;
+padding:0;
+line-height:1.6;
+}
 
-    @media screen and (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
+/* MENU */
 
-      .main-nav {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-      }
+.menu-toggle{
+display:none;
+background:white;
+color:black;
+padding:10px 15px;
+border:none;
+cursor:pointer;
+font-size:18px;
+margin:10px;
+}
 
-      .main-nav.active {
-        display: flex;
-      }
-    }
-  </style>
+.main-nav{
+display:flex;
+gap:20px;
+justify-content:center;
+background:blue;
+padding:10px;
+}
+
+.main-nav a{
+color:yellowgreen;
+text-decoration:none;
+font-weight:bold;
+}
+
+@media screen and (max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.main-nav{
+display:none;
+flex-direction:column;
+align-items:center;
+}
+
+.main-nav.active{
+display:flex;
+}
+
+}
+
+/* HEADER */
+
+.hero{
+background:url("photo/aaron.JPG") center/cover no-repeat;
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
+}
+
+.overlay{
+background:rgba(0,0,0,0.6);
+padding:40px;
+}
+
+.btn-header{
+display:inline-block;
+margin:10px;
+padding:10px 20px;
+background:yellowgreen;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+/* Sections */
+
+section{
+padding:40px;
+max-width:1000px;
+margin:auto;
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+/* Galerie */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:10px;
+}
+
+.gallery img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* Footer */
+
+footer{
+background:black;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+</style>
+
 </head>
+
 <body>
 
-  <!-- Bouton menu mobile -->
-  <button style="color: black;" class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+<button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
 
-  <!-- Menu principal -->
-  <nav class="main-nav">
-    <a href="#">Accueil</a>
-    <a href="#apropos">À propos</a>
-    <a href="#projets">Projets</a>
-    <a href="#competences">Compétences</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#cv">CV</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav class="main-nav">
 
-  <script>
-    function toggleMenu() {
-      const nav = document.querySelector('.main-nav');
-      nav.classList.toggle('active');
-    }
-  </script>
+<a href="#">Accueil</a>
+<a href="#apropos">À propos</a>
+<a href="#projets">Projets</a>
+<a href="#competences">Compétences</a>
+<a href="#gallery">Galerie</a>
+<a href="#cv">CV</a>
+<a href="#contact">Contact</a>
 
-  <!-- En-tête avec image et texte -->
-  <header class="hero">
-    <div class="overlay">
-      <div class="header-content">
-        <h1>Salut, moi c'est Aaron 👋</h1>
-        <p>Étudiant passionné d'informatique, motivé par l'innovation et le développement de solutions technologiques.</p>
-        <p>Bienvenue sur mon portfolio personnel où je partage mes projets, mes compétences et ma vision du futur numérique.</p>
-        <a href="#projets" class="btn-header">Voir mes projets</a>
-        <a href="#cv" class="btn-header">Mon CV</a>
-      </div>
-    </div>
-  </header>
+</nav>
 
-  <!-- Section À propos -->
-  <section id="apropos">
-    <h2>À propos</h2>
-    <p>Je m'appelle Aaron, étudiant en première année à l'Université Protestante au Congo (UPC), où je poursuis une licence en informatique. Depuis mon plus jeune âge, je suis fasciné par les technologies et leur capacité à transformer le monde qui nous entoure.</p>
-    <p>Mon parcours à l’UPC est marqué par un engagement profond dans l’apprentissage théorique et pratique des sciences informatiques. J’y découvre chaque jour de nouvelles notions en programmation, algorithmique, bases de données et systèmes d’exploitation.</p>
-    <p>Je m’investis aussi dans des projets comme la création de sites web, d’applications ou la modélisation 3D. Participer à des hackathons me permet d’apprendre en équipe et de relever des défis réels.</p>
-    <p>Je suis motivé, curieux et passionné par des domaines comme l’intelligence artificielle, l’Internet des objets et les systèmes embarqués. Je crois à la technologie utile, durable et accessible.</p>
-  </section>
+<script>
 
-  <!-- Section Projets -->
-  <section id="projets">
-    <h2>Projets</h2>
-    <p>.portfolio
-       .siteweb pour ecole 
-    . site e-commerce</p>
-  </section>
+function toggleMenu(){
 
-  <!-- Section Compétences -->
-  <section id="competences">
-    <h2>Compétences</h2>
-    <ul>
-      <li><strong>HTML / CSS</strong> : Sites responsives, accessibilité, SEO</li>
-      <li><strong>JavaScript</strong> : DOM, événements, bibliothèques</li>
-      <li><strong>PHP</strong> : Serveur, formulaires, sessions</li>
-      <li><strong>C</strong> : Bases du langage, mémoire, structures</li>
-      <li><strong>Bases de données</strong> : SQL, modélisation, NoSQL</li>
-      <li><strong>Modélisation 3D</strong> : Blender, rendu, impression</li>
-    </ul>
-  </section>
+const nav=document.querySelector('.main-nav');
+nav.classList.toggle('active');
 
-  <!-- Section Galerie -->
-  <section id="gallery">
-    <h2>Ma Galerie</h2>
-    <p>Voici quelques photos qui reflètent mes passions et projets :</p>
-    <div class="gallery">
-      
-      <img src="photo/4588c5d1-0539-4d5b-a373-4b066d87d41f.jpeg" alt="Photo 1">
-      <img src="photo/IMG_0821.JPG" alt="Photo 2">
-      <img src="photo/IMG_3652.JPG" alt="Photo 3">
-      <img src="photo/IMG_0822.JPG" alt="Photo 4">
-      <img src="photo/IMG_3956.jpeg" alt="Photo 5">
-      <imgsrc="photo/alviss.JPG" alt="Photo 6">
-      <img src="photo/aaron.JPG" alt="Photo 7">
-      <img src="photo/ma petite fille.JPG" alt="Photo 8">
-    </div>
-  </section>
+}
 
-  <!-- Section CV -->
-  <section id="cv">
-    <h1>Curriculum Vitae</h1>
-    <p><strong>Nom :</strong> Aaron Manyayi</p>
-    <p><strong>Email :</strong> aaronpaymer9@gmail.com</p>
-    <p><strong>Téléphone :</strong> +243 838619545</p>
-    <p><strong>Adresse :</strong> Kindu 17</p>
-    <p><strong>Date de naissance :</strong> 17/05/2006</p>
-    <p><strong> Nom mere :</strong> Kapinga Rose </p>
-    <p><strong> Nom du pere :</strong> Jean basue  </p>
+</script>
 
-    <h2>🎓 Formation</h2>
-    <p><strong>2024 – Aujourd’hui :</strong> Licence 1 Informatique – UPC</p>
-    <ul>
-      <li>Programmation (Python, C, Java)</li>
-      <li>Bases de données, systèmes, algorithmique</li>
-      <li>Projets en groupe, présentations orales</li>
-    </ul>
-    <p><strong>2023 :</strong> Diplôme d’État – COMPLEXE SCOLAIRE PAULIN DE L'ÉTERNEL</p>
+<header class="hero">
 
-    <h2>💻 Compétences Informatiques</h2>
-    <ul>
-      <li>Langages : Python, C, HTML/CSS</li>
-      <li>Outils : VS Code, Git/GitHub, Linux, Office</li>
-      <li>Méthodes : Algo, POO, travail collaboratif</li>
-    </ul>
+<div class="overlay">
 
-    <h2>🌍 Langues</h2>
-    <ul>
-      <li>Français : Langue maternelle</li>
-      <li>Anglais : Niveau intermédiaire</li>
-    </ul>
+<h1>Salut, moi c'est Aaron 👋</h1>
 
-    <h2>⚽ Centres d'intérêt</h2>
-    <ul>
-      <li>Football : esprit d’équipe</li>
-      <li>Musique : inspiration</li>
-      <li>Vie universitaire : apprentissage</li>
-    </ul>
+<p>Étudiant en informatique passionné par la technologie et le développement logiciel.</p>
 
-    <h2>🎯 Objectif Professionnel</h2>
-    <p>Étudiant motivé en informatique, je souhaite acquérir de solides compétences techniques et humaines pour évoluer dans le domaine des technologies. Je suis à la recherche de stages et d'opportunités d’apprentissage pratique pour compléter ma formation.</p>
-  </section>
+<p>Bienvenue sur mon portfolio personnel où je partage mes projets, mes compétences et mon parcours.</p>
 
-  <!-- Section Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email : <a href="mailto:paymeraaron9@gmail.com">paymeraaron9@gmail.com</a></p>
-    <p>Nom : MANYAYI BASUE AARONE</p>
-  </section>
+<a href="#projets" class="btn-header">Voir mes projets</a>
+<a href="#cv" class="btn-header">Mon CV</a>
 
-  <!-- Pied de page -->
-  <footer>
-    <p>&copy; 2025 AARONE ALVISS - Tous droits réservés</p>
-  </footer>
+</div>
+
+</header>
+
+
+<section id="apropos">
+
+<h2>À propos</h2>
+
+<p>Je m'appelle Aaron Manyayi, étudiant en deuxième année (L2) à l'Université Protestante au Congo (UPC) en informatique.</p>
+
+<p>Je suis passionné par la programmation, le développement logiciel et les nouvelles technologies.</p>
+
+<p>Durant mon parcours universitaire, j'ai développé plusieurs compétences en algorithmique, programmation et bases de données.</p>
+
+<p>J'ai déjà réalisé plusieurs projets académiques notamment des applications en Java et des sites web.</p>
+
+</section>
+
+
+<section id="projets">
+
+<h2>Projets</h2>
+
+<ul>
+
+<li>Portfolio personnel en HTML et CSS</li>
+
+<li>Site web pour une école</li>
+
+<li>Site e-commerce</li>
+
+<li>Application Java de gestion (projet académique)</li>
+
+<li>Application Java connectée à une base de données</li>
+
+</ul>
+
+</section>
+
+
+<section id="competences">
+
+<h2>Compétences</h2>
+
+<ul>
+
+<li><strong>HTML / CSS</strong> : création de sites web responsives</li>
+
+<li><strong>JavaScript</strong> : manipulation du DOM</li>
+
+<li><strong>Java</strong> : programmation orientée objet et applications desktop</li>
+
+<li><strong>PHP</strong> : développement côté serveur</li>
+
+<li><strong>C</strong> : bases du langage et structures</li>
+
+<li><strong>Bases de données</strong> : SQL et modélisation</li>
+
+<li><strong>Modélisation 3D</strong> : Blender</li>
+
+</ul>
+
+</section>
+
+
+<section id="gallery">
+
+<h2>Ma Galerie</h2>
+
+<p>Voici quelques photos :</p>
+
+<div class="gallery">
+
+<img src="photo/4588c5d1-0539-4d5b-a373-4b066d87d41f.jpeg">
+
+<img src="photo/IMG_0821.JPG">
+
+<img src="photo/IMG_3652.JPG">
+
+<img src="photo/IMG_0822.JPG">
+
+<img src="photo/IMG_3956.jpeg">
+
+<img src="photo/alviss.JPG">
+
+<img src="photo/aaron.JPG">
+
+<img src="photo/ma petite fille.JPG">
+
+</div>
+
+</section>
+
+
+<section id="cv">
+
+<h1>Curriculum Vitae</h1>
+
+<p><strong>Nom :</strong> Aaron Manyayi</p>
+
+<p><strong>Email :</strong> aaronpaymer9@gmail.com</p>
+
+<p><strong>Téléphone :</strong> +243 838619545</p>
+
+<p><strong>Adresse :</strong> Kindu 17</p>
+
+<p><strong>Date de naissance :</strong> 17/05/2006</p>
+
+
+<h2>🎓 Formation</h2>
+
+<p><strong>2024 – Aujourd’hui :</strong> Licence 2 Informatique – UPC</p>
+
+<ul>
+
+<li>Programmation Java, Python et C</li>
+
+<li>Bases de données</li>
+
+<li>Systèmes d’exploitation</li>
+
+</ul>
+
+<p><strong>2023 :</strong> Diplôme d’État – COMPLEXE SCOLAIRE PAULIN DE L'ÉTERNEL</p>
+
+
+<h2>💻 Compétences Informatiques</h2>
+
+<ul>
+
+<li>Langages : Java, Python, C, HTML/CSS</li>
+
+<li>Outils : VS Code, Apache NetBeans, GitHub</li>
+
+<li>Méthodes : Algorithmique et POO</li>
+
+</ul>
+
+
+<h2>🌍 Langues</h2>
+
+<ul>
+
+<li>Français : courant</li>
+
+<li>Anglais : intermédiaire</li>
+
+</ul>
+
+
+<h2>🎯 Objectif Professionnel</h2>
+
+<p>Étudiant passionné par l’informatique, je souhaite devenir développeur logiciel et participer à la création de solutions technologiques innovantes.</p>
+
+</section>
+
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<p>Email : <a href="mailto:paymeraaron9@gmail.com">paymeraaron9@gmail.com</a></p>
+
+<p>Nom : MANYAYI BASUE AARONE</p>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 AARONE ALVISS - Tous droits réservés</p>
+
+</footer>
+
+
 </body>
+
 </html>
